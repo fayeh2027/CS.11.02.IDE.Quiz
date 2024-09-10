@@ -1,5 +1,9 @@
 package org.example;
 
+import java.awt.geom.Area;
+
+import static java.lang.Integer.parseInt;
+
 public class Main {
 
     /** Method 1
@@ -9,7 +13,10 @@ public class Main {
      * Method signature: circleArea(int)
      * Returns the area of a circle. */
     public static double circleArea(int radius) {
-        return 0;
+
+        double ca = Math.PI*(radius*radius)*100;
+        ca = (double)Math.round(ca)/100;
+        return ca;
     }
 
     /** Method 2
@@ -19,7 +26,8 @@ public class Main {
      * Method signature: circleCircum(int)
      * Returns the circumference of a circle. */
     public static double circleCircum(int radius) {
-        return 0;
+
+        return 2*Math.PI*radius;
     }
 
     /** Method 3
@@ -33,7 +41,8 @@ public class Main {
      * Circumference: 18.85
      * Area: 28.27 */
     public static String circleInfo(int radius) {
-        return null;
+
+        return "Radius =" + radius + "Circumference =" + 2*Math.PI*radius + "Area = " + Math.PI*(radius*radius);
     }
 
     /** Method 4
@@ -45,7 +54,7 @@ public class Main {
      * Format of returned String: e.g. 3 hours and 46 minutes */
     public static String minutesToHoursMinutes(int minutes) {
 
-        return null;
+        return minutes/60 +"hours" + minutes%60 +"minutes";
     }
 
     /** Method 5
@@ -58,7 +67,14 @@ public class Main {
      * */
     public static String twentyFourToTwelve(String time) {
 
-        return null;
+
+        String hstring = time.substring(0,2);
+        String mstring = time.substring(3,6);
+
+        int hour = parseInt(hstring)-12;
+        return hour + mstring;
+
+
 
     }
 
@@ -70,7 +86,7 @@ public class Main {
      * Returns the distance between two points */
     public static double distanceBetweenTwoPoints(int x1, int y1, int x2, int y2) {
 
-        return 0;
+        return Math.pow(Math.pow(x2-x1,2)+Math.pow(y2-y1,2),(double)1/2);
 
     }
 
@@ -81,9 +97,7 @@ public class Main {
      * Method signature: fahrenheitToCelsius(int)
      * Returns the degrees celsius equivalent of the degrees in fahrenheit */
     public static double fahrenheitToCelsius(int fahrenheit) {
-
-        return 0;
-
+        return (double)(fahrenheit-32)*5/9;
     }
 
     /** Method 8
@@ -94,7 +108,7 @@ public class Main {
      * Returns the degrees fahrenheit equivalent of the degrees in celsius */
     public static double celsiusToFahrenheit(int celsius) {
 
-        return 0;
+        return (double)(9/5)*celsius+32;
 
     }
 
